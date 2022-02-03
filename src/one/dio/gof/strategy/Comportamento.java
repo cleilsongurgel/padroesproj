@@ -1,4 +1,5 @@
 package one.dio.gof.strategy;
 
-public class Comportamento {
+public interface Comportamento {
+    void mover();
 }
