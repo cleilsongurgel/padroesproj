@@ -1,9 +1,10 @@
 package one.dio.gof;
 
-import one.dio.gof.singleton.SingletonEager;
+import one.dio.gof.singleton.CepApi;
 import one.dio.gof.singleton.SingletonLazy;
 import one.dio.gof.singleton.SingletonLazyHolder;
 import one.dio.gof.strategy.*;
+import one.dio.gof.Facade.Facade;
 
 public class Test {
     public static void main(String[] args) {
@@ -13,9 +14,9 @@ public class Test {
         lazy = SingletonLazy.getInstancia();
         System.out.println(lazy);
 
-        SingletonEager eager = SingletonEager.getInstancia();
+        CepApi eager = CepApi.getInstancia();
         System.out.println(eager);
-        eager = SingletonEager.getInstancia();
+        eager = CepApi.getInstancia();
         System.out.println(eager);
 
         SingletonLazyHolder holder = SingletonLazyHolder.getInstancia();
@@ -40,6 +41,10 @@ public class Test {
         robo.setComportamento(agressivo);
         robo.mover();
         robo.mover();
+
+        //Padrão Facade
+        Facade cliente = new Facade();
+        cliente.migrarCliente("Cleilson","5544789");
 
 
     }
